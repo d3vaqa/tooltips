@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.link {
+  text-decoration: none;
+}
+
+a[tool-tip] {
+  position: relative;
+}
+
+a[tool-tip]::after {
+  content: attr(tool-tip);
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  white-space: nowrap;
+  background-color: lightblue;
+  padding: 1.2em 3em;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  transform: scale(0);
+  transition: transform 0.25s ease-in;
+  transform-origin: bottom;
+}
+
+a[tool-tip]:hover::after {
+  transform: scale(1);
+}
