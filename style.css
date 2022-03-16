@@ -11,13 +11,15 @@
 
 a[tool-tip] {
   position: relative;
+  box-sizing: border-box;
+  border: 0;
 }
 
 a[tool-tip]::after {
   content: attr(tool-tip);
   display: block;
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% + 10px);
   left: 0;
   white-space: nowrap;
   background-color: lightblue;
@@ -26,9 +28,22 @@ a[tool-tip]::after {
   font-size: 0.8rem;
   transform: scale(0);
   transition: transform 0.25s ease-in;
-  transform-origin: bottom;
+  transform-origin: bottom center;
+  border: 0;
 }
 
 a[tool-tip]:hover::after {
   transform: scale(1);
+}
+
+a[tool-tip]:hover::before {
+  content: "";
+  border: 15px solid transparent;
+  position: absolute;
+  bottom: calc(100% -25px);
+  left: 50%;
+  transform: translateY(-11px);
+  border-top-color: lightblue;
+  transition: transform 0.25s ease-in;
+  transform-origin: top center;
 }
