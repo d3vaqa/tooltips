@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .link {
@@ -20,7 +22,7 @@ a[tool-tip]::after {
   display: block;
   position: absolute;
   bottom: calc(100% + 10px);
-  left: 0;
+  left: -1.4rem;
   white-space: nowrap;
   background-color: lightblue;
   padding: 1.2em 3em;
